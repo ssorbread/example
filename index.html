@@ -48,12 +48,88 @@
 
 
                 <!-- md pick -->
-                <section class="md_pick"></section>
+                <section class="md_pick">
+                    <div class="inner flex flex_col">
+                        <div class="tit_box flex flex_col ta_c">
+                            <div><span class="badge btn_color">MD PICK</span></div>
+                            <h3>학년별 도서 추천</h3>
+                        </div>
+
+                        <div class="tabs flex">
+                            <button type="button" class="active">초등 1~2학년</button>
+                            <button type="button">초등 3~4학년</button>
+                            <button type="button">초등 5~6학년</button>
+                        </div>
+
+                        <div class="comment flex flex_col">
+                            <strong>송 MD's 추천 코멘트</strong>
+                            <p>이제 막 글자를 익히고 스스로 책을 읽기 시작하는 시기예요. 그림과 이야기가 자연스럽게 어우러진 책으로 읽는 재미를 먼저 느끼게 해주세요.</p>
+                        </div>
+
+                        <div class="list grid">
+                            <div class="item">
+                                <div class="thumb"><img src="https://image.aladin.co.kr/product/40234/74/Cover/K092131782_1.jpg"></div>
+                                <a href="javascript:void(0)" class="cart_btn"></a>
+                            </div>
+                            <div class="item">
+                                <div class="thumb"><img src="https://image.aladin.co.kr/product/40087/65/Cover/K502130345_1.jpg"></div>
+                                <a href="javascript:void(0)" class="cart_btn"></a>
+                            </div>
+                            <div class="item">
+                                <div class="thumb"><img src="https://image.aladin.co.kr/product/40054/82/Cover/K872130840_1.jpg"></div>
+                                <a href="javascript:void(0)" class="cart_btn"></a>
+                            </div>
+                            <div class="item">
+                                <div class="thumb"><img src="https://image.aladin.co.kr/product/40166/99/Cover/K502131663_2.jpg"></div>
+                                <a href="javascript:void(0)" class="cart_btn"></a>
+                            </div>
+                            <div class="item">
+                                <div class="thumb"><img src="https://image.aladin.co.kr/product/38442/39/Cover/8949162679_1.jpg"></div>
+                                <a href="javascript:void(0)" class="cart_btn"></a>
+                            </div>
+                            <div class="item">
+                                <div class="thumb"><img src="https://image.aladin.co.kr/product/37729/80/Cover/K792033265_2.jpg"></div>
+                                <a href="javascript:void(0)" class="cart_btn"></a>
+                            </div>
+                            <div class="item">
+                                <div class="thumb"><img src="https://image.aladin.co.kr/product/40150/59/Cover/8936450646_2.jpg"></div>
+                                <a href="javascript:void(0)" class="cart_btn"></a>
+                            </div>
+                            <div class="item">
+                                <div class="thumb"><img src="https://image.aladin.co.kr/product/36254/57/Cover/K372038526_1.jpg"></div>
+                                <a href="javascript:void(0)" class="cart_btn"></a>
+                            </div>                            
+                        </div>
+                    </div>
+                </section>
                 <!-- // md pick -->
 
                 
                 <!-- 슬라이드 -->
-                <section class="gift"></section>
+                <section class="gift">
+                    <div class="inner flex flex_col">
+                        <div class="slide">
+                            <div class="swiper">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide"><img src="./common/images/260915_aki_gift1.jpg"></div>
+                                    <div class="swiper-slide"><img src="./common/images/260915_aki_gift2.jpg"></div>
+                                    <div class="swiper-slide"><img src="./common/images/260915_aki_gift3.jpg"></div>
+                                    <div class="swiper-slide"><img src="./common/images/260915_aki_gift4.jpg"></div>
+                                    <div class="swiper-slide"><img src="./common/images/260915_aki_gift5.jpg"></div>
+                                </div>
+                                <div class="swiper-button-next"></div>
+                                <div class="swiper-button-prev"></div>
+                                <div class="swiper-pagination"></div>
+                            </div>
+                        </div>
+
+                        <div class="title_box flex flex_col ta_c">
+                            <h4>윌리엄 모리스 슬림티슈</h4>
+                            <p>대상도서 1권 이상 구매 시<br>(택1, 각 마일리지 차감)</p>
+                            <div><a href="javascript:void(0)" class="btn_color">대상도서 모두 보기</a></div>
+                        </div>
+                    </div>
+                </section>
                 <!-- // 슬라이드 -->
             </main>
 
@@ -70,5 +146,37 @@
             <!-- // 팝업 -->
 
         </div>
+
+        <script>
+            $(document).on("click",".md_pick .tabs button",function() {
+                $(".md_pick .tabs button").removeClass("active");
+                $(this).addClass("active");
+
+                if($(".md_pick .tabs button").eq(0).hasClass("active")) {
+                    $(".md_pick .comment p").html('이제 막 글자를 익히고 스스로 책을 읽기 시작하는 시기예요. 그림과 이야기가 자연스럽게 어우러진 책으로 읽는 재미를 먼저 느끼게 해주세요.');
+                } else if($(".md_pick .tabs button").eq(1).hasClass("active")) {
+                    $(".md_pick .comment p").html('독서교육 집중 학년인 만큼, 스스로 질문을 던지고 생각을 확장할 수 있는 책들을 골랐어요. 다양한 장르를 접하며 취향을 넓혀가기 좋은 시기입니다.');
+                } else if($(".md_pick .tabs button").eq(2).hasClass("active")) {
+                    $(".md_pick .comment p").html('중학교 입학을 앞두고 사고력과 문해력을 함께 키울 수 있는 책들을 준비했어요. 깊이 있는 주제의 이야기로 한 뼘 더 성장하는 가을이 되길 바랍니다.');
+                }
+            });
+
+            var giftSlide = new Swiper('.gift .slide .swiper', {
+                loop: true,
+                speed: 1000,
+                autoplay: {
+                    delay: 4000,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                }
+            });
+        </script>
     </body>
 </html>
