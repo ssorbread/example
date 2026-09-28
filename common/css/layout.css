@@ -1,0 +1,102 @@
+/*
+	클래스명은 .으로 시작
+	아이디는 #으로 시작
+
+	태그를 가리킬땐 태그만 써주기
+	
+	ex) 클래스명 -> .title / 아이디값 -> #product
+	클래스 -> 여러군데 사용할수있음 / 한 교실에 성이 다른 줼리가 여러명 있을수있음
+	아이디값 -> 무조건 모든 페이지에서 하나만 사용 가능 / 한 교실에 대구출신의 만촌동에 줼리 하나만 존재
+
+
+	strong, span, em -> 기본적으로 display:inline으로 되어있음
+	-> 패딩값, 마지값 다 안먹음 개짱남
+	-> display:block; 사용하면 width:100% 자동으로 바뀌어버림
+	-> 내 마음대로 사용하려면 display:inline-block; 선언해줘야함
+*/
+
+.inner {
+	position: relative;
+	/*
+		position을 쓰는 순간 top:0; left:0; bottom: 0; right:0; 등을 사용 가능 (!!전체 공통!!)
+
+		position:relative; 
+		-> 부모 박스의 기준점 (스스로가 움직이려면 top:10px처럼 컨트롤 해주기 / 현재 위치에서 top:10px 만큼만 움직임)
+
+		position:fixed;
+		-> 부모의 position:relative 선언 여부 상관없이 무조건!!! 내가 설정한 위치로 (무조건 최상단 최하단 옆 어쩌구)
+			무조건 웹사이트 기준 (내가 보고있는 창 기준)
+
+		position:absolute;
+		-> position:relative;를 선언한 박스안에 들어가야하고 부모박스안에서만 움직임 (따라 움직이고 그런거 아님)
+		   top: 10px 사용시 한단계 위의 부모박스 안에서(position:relative 선언한곳)에서 top:10px만 움직임
+
+		position: sticky;
+		-> 보통 헤더에 사용 / 
+	*/
+	width: 100%; /* 기본 가로 100% */
+	max-width: 930px; /* 최대 가로값 930px */
+	padding: 0 20px 0 20px;
+	/*
+		padding-top: 0;
+		padding-right: 20px;
+		padding-bottom: 0; 
+		padding-left: 20px;
+	*/
+	margin: 0 auto; /* 가운데 정렬 */
+}
+
+
+.modal {
+	display: none;
+}
+.modal .black_bg {
+	display: block;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.5);
+	z-index: 100;
+}
+.modal .modal_cont {
+    width: 90%;
+    max-width: 780px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    max-height: 95vh;
+    overflow: hidden;
+	z-index: 101;
+	background: var(--white);
+	border-radius: 30px;
+}
+.modal .modal_cont .scroll {
+	position: relative;
+	max-height: 95vh;
+    overflow-x: hidden;
+    overflow-y: visible;
+	padding: 30px;
+}
+.modal .modal_cont .scroll::-webkit-scrollbar {
+    display: none;
+}
+
+
+
+
+
+@media screen and (max-width: 1560px) {
+}
+@media screen and (max-width: 1280px) {
+}
+@media screen and (max-width: 1024px) {
+}
+@media screen and (max-width: 768px) {
+}
+@media screen and (max-width: 480px) {
+}
+@media screen and (max-width: 380px) {
+}
